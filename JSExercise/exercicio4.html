@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4</title>
+</head>
+<body>
+    
+    <input id="input" placeholder="Digite a sua idade." />
+    <button>Enviar</button>
+
+    <div id="result"></div>
+
+    <script>
+        var input = document.querySelector('input'); 
+        var divResult = document.getElementById('result'); 
+
+        var button = document.querySelector('button'); 
+
+        function showResult(){
+            divResult.innerHTML = "";
+
+            if(input.value >= 18){
+                var showToUser = document.createElement('h2'); 
+                var textToShow = document.createTextNode('Você é maior de idade');
+
+                showToUser.appendChild(textToShow); 
+                divResult.appendChild(showToUser); 
+
+            }else {
+                var showToUser = document.createElement('h2'); 
+                var textToShow = document.createTextNode('Você é menor de idade');
+
+                showToUser.appendChild(textToShow); 
+                divResult.appendChild(showToUser); 
+            }
+            
+        }
+
+        button.onclick = showResult; 
+
+
+
+    </script>
+</body>
+</html>

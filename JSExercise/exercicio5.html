@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 5</title>
+</head>
+<body>
+
+    <input id="input" placeholder="Digite a primeira média." />
+    <input id="input1" placeholder="Digite a segunda média." />
+    <input id="input2" placeholder="Digite a terceira média." />
+    <button>Enviar</button>
+
+    <div id="result"></div>
+
+    <script>
+        var input = document.querySelector('input'); 
+        var input1 = document.getElementById("input1"); 
+        var input2 = document.getElementById("input2"); 
+
+        var divResult = document.getElementById('result'); 
+
+        var button = document.querySelector('button'); 
+
+        function calcMedia(){
+            divResult.innerHTML = "";
+            var valor1 = parseInt(input.value); 
+            var valor2 = parseInt(input1.value); 
+            var valor3 = parseInt(input2.value); 
+
+            var soma = valor1 + valor2 + valor3; 
+            var media = soma / 3; 
+
+            var showToUser = document.createElement('h2'); 
+            var textToShow = document.createTextNode('Sua média é ' + media + '.');
+
+            showToUser.appendChild(textToShow); 
+            divResult.appendChild(showToUser); 
+            
+        }
+
+        button.onclick = calcMedia; 
+    </script>
+</body>
+</html>

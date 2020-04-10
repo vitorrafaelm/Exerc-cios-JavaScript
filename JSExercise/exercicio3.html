@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3</title>
+</head>
+<body>
+
+    <div id="number">
+
+    </div>
+
+    <script>
+        var num1 = 100;
+        var num2 = 200;
+        var num3 = 3000;
+    
+        var div = document.getElementById('number'); 
+        
+
+        function bigger(){
+            if(num1 > num2 && num1 > num3){
+                var showToUser = document.createElement('h2'); 
+                var textToShow = document.createTextNode('O primeiro número é o maior');
+
+                showToUser.appendChild(textToShow); 
+                div.appendChild(showToUser); 
+            }else if (num2 > num1 && num2 > num3){
+                var showToUser = document.createElement('h2'); 
+                var textToShow = document.createTextNode('O segundo número é o maior');
+
+                showToUser.appendChild(textToShow); 
+                div.appendChild(showToUser); 
+            }else if(num3 > num1 && num3 > num2){
+                var showToUser = document.createElement('h2'); 
+                var textToShow = document.createTextNode('O terceiro número é o maior');
+
+                showToUser.appendChild(textToShow); 
+                div.appendChild(showToUser); 
+            }
+                
+        }
+
+        bigger();
+    </script>
+</body>
+</html>
