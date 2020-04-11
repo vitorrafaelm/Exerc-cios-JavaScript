@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício</title>
+</head>
+<body>
+
+    <input id="peso" placeholder="Digite o seu peso." />
+    <input id="input1" placeholder="Digite a sua altura." />
+
+    <button>Enviar</button>
+
+    <div id="result"></div>
+
+    <script>
+        
+        var input = document.querySelector('input'); 
+        var input1 = document.getElementById("input1"); 
+    
+        var divResult = document.getElementById('result'); 
+        var button = document.querySelector('button'); 
+
+        function CalcImc(){
+         
+            divResult.innerHTML = "";
+            var peso = parseFloat(input.value); 
+            var altura = parseFloat(input1.value); 
+
+            console.log(peso, altura);
+           
+            var imc = peso / (altura * altura); 
+
+            var showToUser = document.createElement('h2'); 
+            var textToShow = document.createTextNode('O seu índice de massa corporal é: ' + imc + '.');
+
+            showToUser.appendChild(textToShow); 
+            divResult.appendChild(showToUser); 
+            
+        }
+
+        button.onclick = CalcImc; 
+    </script>
+
+</body>
+</html>

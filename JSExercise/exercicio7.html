@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+    <script>
+
+        /*
+            Se listarmos todos os números naturais abaixo de 10 que são múltiplos de 3 ou 5, obtemos 3, 5, 6 e 9. A soma desses múltiplos é 23.
+            Faça um programa JavaScript que encontre a soma de todos os múltiplos de 3 ou 5 abaixo de 1000.
+        */
+        var somaTres = 0; 
+        var somaCinco = 0; 
+
+        for(var i = 0; i < 1000; i++){
+            if (i % 3 == 0){
+                somaTres += i; 
+            }else {
+                somaTres += 0; 
+            }
+
+            if (i % 5 == 0){
+                somaCinco += i; 
+            }else {
+                somaCinco += 0; 
+            }
+        }
+
+        var somaTotal = parseInt(somaTres + somaCinco); 
+
+        document.write("O valor da soma dos multiplos de três é: " + somaTres + "<br>");
+        document.write("O valor da soma dos multiplos de cinco é: " + somaCinco + "<br>");
+        document.write("O valor da soma dos multiplos de três e dos multiplos de cinco é: " + somaTotal + "<br>");
+
+    </script>
+</body>
+</html>
