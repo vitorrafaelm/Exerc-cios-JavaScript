@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 15</title>
+</head>
+<body>
+
+    <input id="velocidade" type="text" placeholder="Digite a sua velocidade média">
+    <input id="tempoViagem" type="text" placeholder="Digite o tempo gasto em viagem">
+    <button id="button">Enviar</button>
+
+    <div id="result">
+
+    </div>
+
+    <script>
+        /*
+            Faça um algoritmo que calcule a quantidade de litros 
+            de combustível gasta em uma viagem, utilizando um 
+            automóvel que faz 12Km por litro.
+        
+        */
+
+        var velocidadeMedia = document.getElementById('velocidade'); 
+        var tempoViagem = document.getElementById('tempoViagem'); 
+        var button = document.getElementById('button'); 
+        var result = document.getElementById('result'); 
+
+        function quantityLi(){
+            result.innerHTML = ""; 
+            var distanceDone = parseFloat(velocidadeMedia.value) * parseFloat(tempoViagem.value); 
+            var quantityGasoline = distanceDone / 12; 
+
+            var elementoP = document.createElement('p'); 
+            var text = document.createTextNode("A quantidade de litros usada foi: " + quantityGasoline 
+            + ", o tempo gasto na viagem foi " + tempoViagem.value + "h, a velocidade média da viagem foi " +
+            velocidadeMedia.value + "km/h e a distancia percorrida foi de: " + distanceDone + "km."); 
+
+            elementoP.appendChild(text); 
+            result.appendChild(elementoP);
+        }
+
+        button.onclick = quantityLi; 
+    </script>
+</body>
+</html>

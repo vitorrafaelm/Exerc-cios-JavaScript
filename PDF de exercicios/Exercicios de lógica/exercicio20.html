@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 20</title>
+</head>
+<body>
+    
+    <input id="valor1" type="text" placeholder="Digite o primeiro valor">
+    <input id="valor2" type="text" placeholder="Digite o segundo valor">
+    <button id="button">Enviar</button>
+
+    <div id="result">
+
+    </div>
+
+    <script>
+        var valor1 = document.getElementById('valor1');
+        var valor2 = document.getElementById('valor2');
+
+        var button = document.getElementById('button'); 
+        var result = document.getElementById('result');
+
+        function quadSum(){
+            result.innerHTML = " "; 
+            valor1 = parseFloat(valor1.value); 
+            valor2 = parseFloat(valor2.value); 
+
+            var quadradoSoma = Math.pow(valor1, 2) + 2 * ( valor1 * valor2) + Math.pow(valor2, 2); 
+
+            var elementoP = document.createElement('p'); 
+            var text = document.createTextNode("O valor do quadrado da soma de " + valor1 + " e " + valor2 + " é " + quadradoSoma + "."); 
+
+            elementoP.appendChild(text); 
+            result.appendChild(elementoP);
+        }
+
+        button.onclick = quadSum; 
+    </script>
+
+</body>
+</html>

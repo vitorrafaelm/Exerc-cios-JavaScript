@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 19</title>
+</head>
+<body>
+    <input id="valor" type="text" placeholder="Digite um valor">
+    <button id="button">Enviar</button>
+
+    <div id="result">
+
+    </div>
+
+    <script>
+        var valor = document.getElementById('valor');
+
+        var button = document.getElementById('button'); 
+        var result = document.getElementById('result');
+
+        function quadCub(){
+            valor = parseFloat(valor.value); 
+            var quadrado = Math.pow(valor, 2); 
+            var cubo = Math.pow(valor, 3); 
+
+            var elementoP = document.createElement('p'); 
+            var text = document.createTextNode("O valor do quadrado de " + valor + " é " + quadrado + " e o valor do cubo é " + cubo); 
+
+            elementoP.appendChild(text); 
+            result.appendChild(elementoP);
+        }
+
+        button.onclick = quadCub; 
+    </script>
+</body>
+</html>

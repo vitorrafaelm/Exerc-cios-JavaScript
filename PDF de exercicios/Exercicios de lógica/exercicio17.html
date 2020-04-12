@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 17</title>
+</head>
+<body>
+    
+    <input id="valor1" placeholder="Digite o primeiro valor"/>
+    <input id="valor2" placeholder="Digite o segundo valor"/>
+    <input id="valor3" placeholder="Digite o terceiro valor"/>
+    <input id="valor4" placeholder="Digite o quanto valor"/>
+    <button id="button">Enviar</button>
+
+    <div id="result">
+
+    </div>
+
+    <script>
+        var valor1 = document.getElementById('valor1'); 
+        var valor2 = document.getElementById('valor2'); 
+        var valor3 = document.getElementById('valor3'); 
+        var valor4 = document.getElementById('valor4');
+
+        var button = document.getElementById('button'); 
+        var result = document.getElementById('result');
+
+        function sumMul(){
+            var a = parseFloat(valor1.value);
+            var b = parseFloat(valor2.value); 
+            var c = parseFloat(valor3.value);  
+            var d = parseFloat(valor4.value); 
+
+            var texto = `Somas <br> A + B = ${a + b}, A + C = ${a + c},
+            A + D = ${a + d}, B + C = ${b + c}, B + D = ${b + d} e C + D = ${c + d} <br>
+            Multiplicação <br> A * B = ${a * b} , A * C = ${a * c}, A * D = ${a * d}, B * C = ${b * c}, B * D = ${b * d} e C * D = ${c * d}`;
+
+            document.write(texto); 
+
+        }
+
+        button.onclick = sumMul;
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 11</title>
+</head>
+<body>
+    <input id="ht" placeholder="Digite o total de horas trabalhadas no mês!"/>
+    <input id="vh" placeholder="Digite o valor da hora!"/>
+    <input id="pd" placeholder="Digite o percentual de descontro!"/>
+    <button id="button">Enviar</button>
+
+    <div id="result">
+
+    </div>
+
+    <script>
+        var ht = document.getElementById('ht'); 
+        var vh = document.getElementById('vh'); 
+        var pd = document.getElementById('pd'); 
+        var button = document.getElementById('button'); 
+        var result = document.getElementById('result'); 
+         
+
+        function calcThings(){
+            var salarioBruto = (parseFloat(ht.value) * parseFloat(vh.value)); 
+            var totalDescont = (parseFloat(pd.value/100) * parseFloat(salarioBruto)); 
+            var salarioliquido = salarioBruto - totalDescont; 
+
+            var horastrabalhadas = `<li>O total de horas trabalhadas é: ${ht.value} </li>`; 
+            var salario = `<li>O valor do seu salário é: ${salarioBruto} </li>`;
+            var desconto = `<li>O valor do descontado do seu salário é de: ${totalDescont} </li>`;
+            var salarioLiquido = `<li>O valor do seu salário líquido é: ${salarioliquido} </li>`;
+            var elementoFechamento = "</ul></div>";
+
+            var elemento = "<div><ul>" + horastrabalhadas + salario + desconto + salarioLiquido + elementoFechamento; 
+            document.write(elemento); 
+            
+        }
+
+        button.onclick = calcThings; 
+
+    </script>
+
+</body>
+</html>

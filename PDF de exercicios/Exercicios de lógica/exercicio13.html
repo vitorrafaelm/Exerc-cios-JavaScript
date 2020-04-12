@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 13</title>
+</head>
+<body>
+    <input id="f" placeholder="Digite a temperatura em Fahrenheit"/>
+    <button id="button">Converter</button>
+
+    <div id="result">
+
+    </div>
+
+    <script>
+        var fahrenheit = document.getElementById('f'); 
+        var button = document.getElementById('button'); 
+        var result = document.getElementById('result'); 
+
+        function converToFahr(){
+            result.innerHTML = ""; 
+            var c = (parseFloat(fahrenheit.value) - 32) * (5/9);  
+            var elementoP = document.createElement('p'); 
+            var text = document.createTextNode("A temperatura em Celsius é: " + c); 
+
+            elementoP.appendChild(text); 
+            result.appendChild(elementoP);
+        }
+
+        button.onclick = converToFahr;  
+    </script>
+</body>
+</body>
+</html>

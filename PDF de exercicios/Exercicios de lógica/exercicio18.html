@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 18</title>
+</head>
+<body>
+    <input id="comprimento" placeholder="Digite o comprimento do objeto"/>
+    <input id="largura" placeholder="Digite a largura do objeto"/>
+    <input id="altura" placeholder="Digite a altura do objeto"/>
+    <button id="button">Enviar</button>
+
+    <div id="result">
+
+    </div>
+
+    <script>
+        var comprimento = document.getElementById('comprimento'); 
+        var largura = document.getElementById('largura'); 
+        var altura = document.getElementById('altura');
+
+        var button = document.getElementById('button'); 
+        var result = document.getElementById('result');
+
+        function calcuVolum(){
+            comprimento = parseFloat(comprimento.value); 
+            largura = parseFloat(largura.value); 
+            altura = parseFloat(altura.value); 
+
+            var volume = comprimento * largura * altura; 
+
+            var elementoP = document.createElement('p'); 
+            var text = document.createTextNode("O volume do objeto é: " + volume + "m³."); 
+
+            elementoP.appendChild(text); 
+            result.appendChild(elementoP);
+        }
+        
+        button.onclick = calcuVolum; 
+
+    </script>
+</body>
+</html>

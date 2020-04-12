@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 9</title>
+</head>
+<body>
+    <input id="nome" placeholder="Digite o seu nome!"/>
+    <input id="sobrenome" placeholder="Digite o seu sobrenome!"/>
+    <button id="button">Enviar</button>
+
+    <script>
+        var nome = document.getElementById('nome'); 
+        var sobrenome= document.getElementById('sobrenome'); 
+        var button = document.getElementById('button'); 
+
+        function concaNameSobrenome(){
+            var name = nome.value + " " + sobrenome.value; 
+            document.write(name); 
+        }
+
+        button.onclick = concaNameSobrenome; 
+    </script>
+</body>
+</html>

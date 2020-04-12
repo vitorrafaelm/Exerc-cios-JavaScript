@@ -6,6 +6,24 @@
     <title>Exercício 7</title>
 </head>
 <body>
+
+    <input id="raio" placeholder="Digite o valor do raio do circulo."/>
+    <button id="button">Enviar</button>
+
+    <script>
+
+        var raio = document.getElementById('raio'); 
+        var button = document.getElementById('button'); 
+        var pi = 3.14159; 
     
+
+        function areaCircle(){
+            var area = pi * raio.value * raio.value;
+            
+            document.write("A área do circulo é: " + area);
+        }
+        
+        button.onclick = areaCircle; 
+    </script>
 </body>
 </html>

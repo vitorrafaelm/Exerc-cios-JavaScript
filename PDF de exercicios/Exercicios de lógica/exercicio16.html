@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 16</title>
+</head>
+<body>
+    <input id="valor1" placeholder="Digite o primeiro valor"/>
+    <input id="valor2" placeholder="Digite o segundo valor"/>
+    <button id="button">Enviar</button>
+
+    <div id="result">
+
+    </div>
+
+    <script>
+        var valor1 = document.getElementById('valor1'); 
+        var valor2 = document.getElementById('valor2'); 
+        var button = document.getElementById('button'); 
+        var result = document.getElementById('result');
+
+        function invertValues() {
+            result.innerHTML = ""; 
+            a = parseFloat(valor1.value); 
+            b = parseFloat(valor2.value); 
+            var c = a; 
+            a = b 
+            b = c; 
+        
+            var elementoP = document.createElement('p'); 
+            var text = document.createTextNode("Valor de A é: " + a + " e o valor de B é " + b + "."); 
+
+            elementoP.appendChild(text); 
+            result.appendChild(elementoP);
+        }
+
+        button.onclick = invertValues; 
+        
+    </script>
+</body>
+</html>
