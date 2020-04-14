@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 27</title>
+</head>
+<body>
+    <input id="codigo" type="text" placeholder="Digite o seu código de 5 digitos">
+    <button id="button">Converter</button>
+
+    <div id="result">
+
+    </div>
+
+    <script>
+        var codigo = document.getElementById('codigo'); 
+        var button = document.getElementById('button'); 
+        var result = document.getElementById('result'); 
+        
+        function digitoVerificador(){
+            var resultado = codigo.value; 
+            var valor1 = parseFloat(resultado[0]); 
+            var valor2 = parseFloat(resultado[1]); 
+            var valor3 = parseFloat(resultado[2]); 
+            var valor4 = parseFloat(resultado[3]); 
+            var valor5 = parseFloat(resultado[4]); 
+
+            var s = 6 * valor1 + 5 * valor2 + 4 * valor3 + 3 * valor4 + 2 * valor5; 
+            var digitoverificador = s % 7; 
+
+            var element = document.createElement('p'); 
+            var txt = document.createTextNode("O seu dígito verificador é " + digitoverificador); 
+
+            element.appendChild(txt); 
+            result.appendChild(element); 
+        }
+
+        button.onclick = digitoVerificador;
+    </script>
+</body>
+</html>

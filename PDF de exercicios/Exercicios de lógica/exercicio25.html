@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 25</title>
+</head>
+<body>
+    <input id="valor1" type="text" placeholder="Digite o primeiro valor">
+    <input id="valor2" type="text" placeholder="Digite o segundo valor">
+    <button id="button">Converter</button>
+
+    <div id="result">
+
+    </div>
+
+    <script>
+        var valor1 = document.getElementById('valor1'); 
+        var valor2 = document.getElementById('valor2'); 
+        var button = document.getElementById('button'); 
+        var result = document.getElementById('result'); 
+
+        function restoResult(){
+            var val1 = parseFloat(valor1.value); 
+            var val2 = parseFloat(valor2.value); 
+
+            var resto = val1 % val2; 
+            var quociente = val1 / val2; 
+
+            var element = document.createElement('p'); 
+            var txt = document.createTextNode("O resto da divisão é " + resto + " e o quociente é " + quociente + "."); 
+
+            element.appendChild(txt); 
+            result.appendChild(element); 
+        }
+
+        button.onclick = restoResult; 
+    </script>
+</body>
+</html>

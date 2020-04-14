@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 24</title>
+</head>
+<body>
+
+    <input id="velocidade" type="text" placeholder="Digite uma velocidade em KM/h">
+    <button id="button">Converter</button>
+
+    <div id="result">
+
+    </div>
+
+    <script>
+        var velocidade = document.getElementById('velocidade'); 
+        var button = document.getElementById('button'); 
+        var result = document.getElementById('result'); 
+
+        function converVelocidade(){
+            var velocidadeFloar = parseFloat(velocidade.value); 
+            var velocidadeConvertida = velocidadeFloar / 3.6; 
+
+            var element = document.createElement('p'); 
+            var txt = document.createTextNode("A velocidade " + velocidadeFloar + "Km/h" + " em m/s é " + velocidadeConvertida + "."); 
+
+            element.appendChild(txt); 
+            result.appendChild(element); 
+        }
+
+        button.onclick = converVelocidade; 
+    </script>
+</body>
+</html>

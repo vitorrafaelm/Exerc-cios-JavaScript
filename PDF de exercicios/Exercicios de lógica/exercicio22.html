@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=2.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="valor1" placeholder="Digite o primeiro valor">
+    <input type="text" id="valor2" placeholder="Digite o segundo valor">
+    <button id="button">Enviar</button>
+
+    <div id="result">
+
+    </div>
+
+    <script>
+        var valo = document.getElementById('valor1'); 
+        var valo2 = document.getElementById('valor2');
+
+        var button = document.getElementById('button');
+        var result = document.getElementById('result'); 
+
+        function average(){
+            result.innerHTML = "";
+            var valor1 = parseFloat(valo.value); 
+            var valor2 = parseFloat(valo2.value); 
+
+            var average = (valor1 + valor2) / 2; 
+
+            var element = document.createElement('p'); 
+            var txt = document.createTextNode("A sua média é " + average); 
+
+            element.appendChild(txt); 
+            result.appendChild(element); 
+        }
+
+        button.onclick = average; 
+
+    </script>
+</body>
+</html>

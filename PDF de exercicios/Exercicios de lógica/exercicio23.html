@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 23</title>
+</head>
+<body>
+    
+    <input id="valor1" type="text" placeholder="Digite o primeiro valor">
+    <input id="valor2" type="text" placeholder="Digite o segundo valor">
+    <button id="button">Enviar</button>
+
+    <div id="result">
+
+    </div>
+
+    <script>
+        var NumA = document.getElementById('valor1');
+        var NumB = document.getElementById('valor2');
+
+        var button = document.getElementById('button'); 
+        var result = document.getElementById('result');
+
+        function Inverse(){
+            result.innerHTML = " "; 
+            var a = parseFloat(valor1.value); 
+            var b = parseFloat(valor2.value); 
+            
+            var c = a; 
+            a = b; 
+            b = c;
+        
+            var elementoP = document.createElement('p'); 
+            var text = document.createTextNode("O valor invertido é " + a + " e " + b ); 
+
+            elementoP.appendChild(text); 
+            result.appendChild(elementoP);
+        }
+
+        button.onclick = Inverse; 
+    </script>
+</body>
+</html>

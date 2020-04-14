@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 26</title>
+</head>
+<body>
+    <input id="salario" type="text" placeholder="Digite o seu salário">
+    <button id="button">Converter</button>
+
+    <div id="result">
+
+    </div>
+
+    <script>
+        var salario = document.getElementById('salario'); 
+        var button = document.getElementById('button'); 
+        var result = document.getElementById('result'); 
+
+        function SalarioLiquido(){
+            var salarioF = parseFloat(salario.value); 
+            var desconto1 = salarioF * (10/100); 
+            salarioF = salarioF - desconto1; 
+            var desconto2 = salarioF * (5/100); 
+            salarioF = salarioF - desconto2; 
+
+            var element = document.createElement('p'); 
+            var txt = document.createTextNode("O seu salário líquido é de R$ " + salarioF); 
+
+            element.appendChild(txt); 
+            result.appendChild(element); 
+        }
+
+        button.onclick = SalarioLiquido; 
+    </script>
+</body>
+</html>

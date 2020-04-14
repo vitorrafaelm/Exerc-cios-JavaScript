@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 30</title>
+</head>
+<body>
+    <input id="matricula" type="text" placeholder="Digite o seu número de matrícula">
+    <button id="button">Enviar</button>
+
+    <div id="result">
+
+    </div>
+
+    <script>
+        var matricula = document.getElementById('matricula'); 
+        var button = document.getElementById('button'); 
+        var result = document.getElementById('result'); 
+        
+        function mostrarAnoSemestre(){
+            var resultado = matricula.value; 
+            var valor1 = (resultado[0]); 
+            var valor2 = (resultado[1]); 
+            var valor3 = (resultado[2]); 
+            var valor4 = (resultado[3]); 
+            var valor5 = (resultado[4]); 
+            var valor6 = (resultado[5]);  
+           
+            var element = document.createElement('p'); 
+            var txt = document.createTextNode("Você se matriculou no ano de 20"+valor1+valor2+" no "+valor1+"º semestre."); 
+
+            element.appendChild(txt); 
+            result.appendChild(element); 
+        }
+
+        button.onclick = mostrarAnoSemestre;
+    </script>
+</body>
+</html>

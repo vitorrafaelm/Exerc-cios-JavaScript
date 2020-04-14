@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 29</title>
+</head>
+<body>
+    <input id="data" type="text" placeholder="Digite uma data utilizando apenas números">
+    <button id="button">Converter</button>
+
+    <div id="result">
+
+    </div>
+
+    <script>
+        var data = document.getElementById('data'); 
+        var button = document.getElementById('button'); 
+        var result = document.getElementById('result'); 
+        
+        function digitoVerificador(){
+            var resultado = data.value; 
+            var valor1 = (resultado[0]); //D
+            var valor2 = (resultado[1]); //D
+            var valor3 = (resultado[2]); //M
+            var valor4 = (resultado[3]); //M
+            var valor5 = (resultado[4]); //A
+            var valor6 = (resultado[5]); //A
+            var valor7 = (resultado[6]); //A
+            var valor8 = (resultado[7]); //A
+            //AAMMDD
+            var dataConvertida =  valor5+valor6+valor7+valor8+'/'+valor3+valor4+'/'+valor1+valor2; 
+
+            var element = document.createElement('p'); 
+            var txt = document.createTextNode("O data que você digitou no formato DDMMAA, convertida para o formato AAMMDD é " + dataConvertida); 
+
+            element.appendChild(txt); 
+            result.appendChild(element); 
+        }
+
+        button.onclick = digitoVerificador;
+    </script>
+</body>
+</html>

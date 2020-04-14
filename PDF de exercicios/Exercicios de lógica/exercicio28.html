@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 28</title>
+</head>
+<body>
+    <input id="numero" type="text" placeholder="Digite um número de três algarismos">
+    <button id="button">Converter</button>
+
+    <div id="result">
+
+    </div>
+
+    <script>
+        var numero = document.getElementById('numero'); 
+        var button = document.getElementById('button'); 
+        var result = document.getElementById('result'); 
+        
+        function inverterNumero(){
+            var resultado = numero.value; 
+            var valor1 = (resultado[0]); 
+            var valor2 = (resultado[1]); 
+            var valor3 = (resultado[2]); 
+
+            resultado = valor3+valor2+valor1; 
+            
+            var element = document.createElement('p'); 
+            var txt = document.createTextNode("O número que você digitou, quando invertido é igual a " + resultado); 
+
+            element.appendChild(txt); 
+            result.appendChild(element); 
+        }
+
+        button.onclick = inverterNumero;
+    </script>
+</body>
+</html>
