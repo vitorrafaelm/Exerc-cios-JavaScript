@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+    <title>VM - A sua corretora de imóveis.</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-light bg-primary">
+        <div class="container">
+            <span class="navbar-brand mb-0 impact">
+                <h2 style="display: inline;">VM</h2> CORRETORA DE IMÓVEIS
+            </span>
+        </div>
+    </nav>
+
+    <div class="container moveToBottom">
+        <div class="row">
+            <div class="col-md-4">
+                <h4>1º Corretor</h4>
+                <input id="nomeCorretor1" type="text" class="form-control" placeholder="Digite o seu nome">
+                <input id="valorVendasCorretor1" type="text" class="form-control" placeholder="Digite o valor da sua venda">
+                <button id="buttonCorretor1" onclick="calcularComissaoC1()" class="btn btn-primary">Calcular</button>
+                <br>
+
+                <div class="result">
+                    <div>Nome: <span id="nomeC1"></span> </div>
+                    <div>Valor de vendas: <span id="vendasC1"></span> </div>
+                    <div>Valor da comissão: <span id="comissaoC1"></span> </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+                <h4>2º Corretor</h4>
+                <input id="nomeCorretor2" type="text" class="form-control" placeholder="Digite o seu nome">
+                <input id="valorVendasCorretor2" type="text" class="form-control" placeholder="Digite o valor da sua venda">
+                <button id="buttonCorretor2" onclick="calcularComissaoC2()"  class="btn btn-primary">Calcular</button>
+                <br>
+
+                <div class="result"> 
+                    <div>Nome: <span id="nomeC2"></span> </div>
+                    <div>Valor de vendas: <span id="vendasC2"></span> </div>
+                    <div>Valor da comissão: <span id="comissaoC2"></span> </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+                <h4>3º Corretor</h4>
+                <input id="nomeCorretor3" type="text" class="form-control" placeholder="Digite o seu nome">
+                <input id="valorVendasCorretor3" type="text" class="form-control" placeholder="Digite o valor da sua venda">
+                <button id="buttonCorretor3" onclick="calcularComissaoC3()"  class="btn btn-primary">Calcular</button>
+                <br>
+
+                <div class="result">
+                    <div>Nome: <span id="nomeC3"></span> </div>
+                    <div>Valor de vendas: <span id="vendasC3"></span> </div>
+                    <div>Valor da comissão: <span id="comissaoC3"></span> </div>
+                </div>
+
+            </div>
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col-md-12">
+                <h4>O total de vendas da empresa foi: <span id="totalVendas"></span> </h4>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

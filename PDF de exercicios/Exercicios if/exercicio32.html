@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 32</title>
+</head>
+<body>
+    <input id="numero1" type="text" placeholder="Digite o primeiro número">
+    <button id="button">Escolher maior</button>
+     
+    <div id="result">
+
+    </div>
+
+    <script>
+        var numero1 = (document.getElementById('numero1')); 
+        var button = (document.getElementById('button')); 
+        var result = document.getElementById('result');
+
+        function show(){
+            var numero = parseFloat(numero1.value); 
+            
+
+            if(numero <= 10) {
+                result.innerHTML = "<p> F1 </p>"; 
+            }else if(numero > 10 && numero <= 100) {
+                result.innerHTML = "<p> F2 </p>"; 
+            } else if(numero > 100) {
+                result.innerHTML = "<p> F3 </p>"; 
+            }
+
+        }
+
+        button.onclick = show;
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 35</title>
+</head>
+<body>
+    <input id="nome" type="text" placeholder="Digite o seu nome">
+    <input id="portugues" type="text" placeholder="Digite sua nota de português">
+    <input id="matematica" type="text" placeholder="Digite a sua nota de matemática">
+    <input id="Cgerais" type="text" placeholder="Digite a sua nota de conhecimentos gerais">
+
+    <button id="button">Average</button>
+    <div id="result">
+
+    </div>
+
+    <script>
+        var nome = document.getElementById('nome');
+        var portugues = document.getElementById('portugues');
+        var matematica = document.getElementById('matematica');
+        var Cgerais = document.getElementById('Cgerais');
+
+        var button = document.getElementById('button');
+        var result = document.getElementById('nome');
+
+        function calcAverage(){
+            nome = nome.value; 
+            portugues = parseFloat(portugues.value); 
+            matematica = parseFloat(matematica.value); 
+            Cgerais = parseFloat(Cgerais.value); 
+
+            var media = (portugues + matematica + Cgerais)/3; 
+            var text = ""; 
+            if((media >= 7) && (portugues > 5) && (matematica > 5) && (Cgerais > 5)){
+                text = "Olá " + nome +", as suas notas foram: <br> Português: " + portugues + ".<br> Matemática " + 
+                matematica + ".<br> Conhecimentos Gerais: " + Cgerais + ". <br> <h2>Você está aprovado, pois a sua média foi " +media+ ".</h2>";
+            }else {
+                text = "Olá " + nome +", as suas notas foram: <br> Português: " + portugues + ".<br> Matemática " + 
+                matematica + ".<br> Conhecimentos Gerais: " + Cgerais + ". <br> <h2>Você está reprovado!</h2>";
+            }
+            
+            document.write(text); 
+        }
+        button.onclick = calcAverage; 
+    </script>
+</body>
+</html>

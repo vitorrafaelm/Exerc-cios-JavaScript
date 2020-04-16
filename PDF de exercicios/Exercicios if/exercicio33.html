@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 33</title>
+</head>
+<body>
+    <input id="nota1" type="text" placeholder="Digite a sua primeira nota">
+    <input id="nota2" type="text" placeholder="Digite a sua segunda nota">
+    <input id="nota3" type="text" placeholder="Digite a sua terceira nota">
+    <button id="button">Average</button>
+     
+    <div id="result">
+
+    </div>
+
+    <script>
+        var nota1 = (document.getElementById('nota1')); 
+        var nota2 = (document.getElementById('nota2')); 
+        var nota3 = (document.getElementById('nota3')); 
+        var button = (document.getElementById('button')); 
+        var result = document.getElementById('result');
+
+        function average(){
+            nota1 = parseFloat(nota1.value); 
+            nota2 = parseFloat(nota2.value); 
+            nota3 = parseFloat(nota3.value); 
+
+            var media = (2 * nota1 + 3 * nota2 + 5 * nota3) / 10;
+
+            result.innerHTML = "<p>A sua média é: " + media + ".</p>"; 
+
+        }
+
+        button.onclick = average; 
+    </script>
+</body>
+</html>

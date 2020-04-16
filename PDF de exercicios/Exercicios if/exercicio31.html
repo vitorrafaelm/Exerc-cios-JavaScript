@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 31</title>
+</head>
+<body>
+    <input id="numero1" type="text" placeholder="Digite o primeiro número">
+    <input id="numero2" type="text" placeholder="Digite o segundo número">
+    <button id="button">Escolher maior</button>
+     
+    <div id="result">
+
+    </div>
+
+    <script>
+        var numero1 = (document.getElementById('numero1')); 
+        var numero2 = (document.getElementById('numero2')); 
+        var button = (document.getElementById('button')); 
+        var result = document.getElementById('result');
+
+        function ShowBigger(){
+            var numero = parseFloat(numero1.value); 
+            var numer = parseFloat(numero2.value); 
+
+            if(numero > numer) {
+                result.innerHTML = "<p>O maior número é: " + numero + "</p>"; 
+            }else {
+                result.innerHTML = "<p>O maior número é: " + numer + "</p>"; 
+            }
+
+        }
+
+        button.onclick = ShowBigger; 
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 34</title>
+</head>
+<body>
+    <input id="valor1" type="text" placeholder="Digite o primeiro valor">
+    <input id="valor2" type="text" placeholder="Digite o segundo valor">
+    <input id="valor3" type="text" placeholder="Digite o terceiro valor">
+    <button id="button">Average</button>
+     
+    <div id="result">
+
+    </div>
+
+    <script>
+        var valor1 = (document.getElementById('valor1')); 
+        var valor2 = (document.getElementById('valor2')); 
+        var valor3 = (document.getElementById('valor3')); 
+        var button = (document.getElementById('button')); 
+        var result = document.getElementById('result');
+
+        function showInCrescentOrder(){
+            
+            valor1 = parseFloat(valor1.value); 
+            valor2 = parseFloat(valor2.value); 
+            valor3 = parseFloat(valor3.value); 
+
+            if(valor1 > valor2 && valor1 > valor3 && valor2 < valor3 ){
+                result.innerHTML = valor2+ "-" + valor3+ "-" +valor1; 
+            }else if(valor2 > valor1 && valor2 > valor3 && valor1<valor3){
+                result.innerHTML = valor1+ "-" +valor3+ "-" +valor2; 
+            }else if(valor3 > valor1 && valor3 > valor2 && valor1<valor2){
+                result.innerHTML = valor1+ "-" +valor2 + "-" +valor3; 
+            }else if(valor1 > valor2 && valor1 > valor3 && valor2 < valor1){
+                result.innerHTML = valor2+ "-" +valor1 + "-" +valor3; 
+            }else if(valor1 > valor2 && valor1 > valor3 && valor3 < valor2){
+                result.innerHTML = valor3+ "-" +valor2+ "-" +valor1; 
+            }else if(valor2 > valor1 && valor2 > valor3 && valor3<valor1){
+                result.innerHTML = valor3+ "-" +valor1+ "-" +valor2; 
+            }
+
+        }
+
+        button.onclick = showInCrescentOrder; 
+    </script>
+</body>
+</html>
