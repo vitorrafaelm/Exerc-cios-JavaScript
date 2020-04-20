@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 44</title>
+</head>
+<body>
+    <input id="tipo1" type="text" placeholder="Digite a quantidade do picole tipo 1">
+    <input id="tipo2" type="text" placeholder="Digite a quantidade do picole tipo 2">
+    <input id="tipo3" type="text" placeholder="Digite a quantidade do picole tipo 3">
+
+    <button id="button" onclick="valorArrecadado()">Analisar</button>
+
+    <script>
+        function valorArrecadado() {
+            var tipo1 = document.getElementById('tipo1'); 
+            var tipo2 = document.getElementById('tipo2'); 
+            var tipo3 = document.getElementById('tipo3'); 
+
+            tipo1 = parseInt(tipo1.value);
+            tipo2 = parseInt(tipo2.value);
+            tipo3 = parseInt(tipo3.value);
+
+            var valortipo1 = tipo1 * 0.5; 
+            var valortipo2 = tipo2 * 0.6; 
+            var valortipo3 = tipo3 * 0.75; 
+
+            var totalArrecado = valortipo1 + valortipo2 + valortipo3; 
+
+            var txt = "<h2>Relatótio do dia</h2><br>" + 
+            "Quantidade de picole tipo1: " + tipo1 + ".<br>" +
+            "Quantidade de picole tipo2: " + tipo2 + ".<br>" +
+            "Quantidade de picole tipo3: " + tipo3 + ".<br>" +
+            "O valor total de vendas foi: " + totalArrecado + " reais.";
+
+            document.write(txt);
+        }
+    </script>
+</body>
+</html>

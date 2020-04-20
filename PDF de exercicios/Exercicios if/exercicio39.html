@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 39</title>
+</head>
+<body>
+    <h1>O valor da sua compra é: 345 reais</h1>
+
+    <input id="pagamento" type="text" placeholder="Digite o valor para pagamento">
+    <button id="button" onclick="showMoney()">Pagar</button>
+
+    <div id="result">
+
+    </div>
+
+    <script>
+        var pagamento = document.getElementById('pagamento');
+        var button = document.getElementById('button');
+        var result = document.getElementById('result');
+
+        function showMoney(){
+            pagamento = parseInt(pagamento.value); 
+
+            var troco = pagamento - 345; 
+            troco = troco.toString(); 
+            console.log(troco);
+            var centena = (troco[0]);
+            var dezena = (troco[1]);
+            var unidade = (troco[2]);
+
+            var txt = "";
+
+            if(unidade == undefined && dezena != undefined && centena != undefined){
+                txt = document.createTextNode("A quatidade de notas de 100 é " + 0 + ", a quantidade de nota de 10 é " + centena + 
+                " e a quantidade de notas de 1 é " + dezena + ".");
+            }else if(dezena == undefined && unidade == undefined && centena != undefined){
+                txt = document.createTextNode("A quatidade de notas de 100 é " + 0 + ", a quantidade de nota de 10 é " + 0 + 
+                " e a quantidade de notas de 1 é " + centena + ".");
+            }else if(unidade != undefined && dezena != undefined && centena != undefined){
+                txt = document.createTextNode("A quatidade de notas de 100 é " + centena + ", a quantidade de nota de 10 é " + dezena + 
+                " e a quantidade de notas de 1 é " + unidade + ".");
+            }
+            var txt2 = document.createTextNode("O seu troco é: " + troco + ".")
+            result.appendChild(txt);
+            result.appendChild(txt2);
+        }
+        
+    </script>
+</body>
+</html>

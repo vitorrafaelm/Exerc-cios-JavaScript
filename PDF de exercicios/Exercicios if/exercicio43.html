@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 43</title>
+</head>
+<body>
+    <input id="nome" type="text" placeholder="Digite o seu nome">
+    <input id="salario" type="text" placeholder="Digite o seu salário">
+    <input id="categoria" type="text" placeholder="Digite a sua categoria">
+
+    <button id="button" onclick="saberAumento()">Analisar</button>
+
+    <script>
+        var nome = document.getElementById('nome');
+        var salario = document.getElementById('salario');
+        var categoria = document.getElementById('categoria');
+
+        function saberAumento() {
+            var salarioPessoa = parseFloat(salario.value); 
+            var categoriaPessoa = categoria.value; 
+            var nomePessoa = nome.value; 
+            var novoSalario = 0; 
+            var acrescimo = 0; 
+            if( categoriaPessoa == "A" ||  categoriaPessoa == "C" ||  categoriaPessoa == "F" ||  categoriaPessoa == "H"){
+                acrescimo = salarioPessoa * (10/100); 
+                novoSalario = salarioPessoa + acrescimo; 
+            }else if(categoriaPessoa == "B" ||  categoriaPessoa == "D" ||  categoriaPessoa == "E" ||  categoriaPessoa == "I" 
+            || categoriaPessoa == "J" ||  categoriaPessoa == "T"){
+                acrescimo = salarioPessoa * (15/100); 
+                novoSalario = salarioPessoa + acrescimo; 
+            }else if(categoriaPessoa == "K" || categoriaPessoa == "R"){
+                acrescimo = salarioPessoa * (25/100); 
+                novoSalario = salarioPessoa + acrescimo; 
+            }else if(categoriaPessoa == "L" || categoriaPessoa == "M" || categoriaPessoa == "N" || categoriaPessoa == "P"
+            || categoriaPessoa == "Q" || categoriaPessoa == "S" || categoriaPessoa == "O"){
+                acrescimo = salarioPessoa * (35/100); 
+                novoSalario = salarioPessoa + acrescimo; 
+            }else if(categoriaPessoa == "U" || categoriaPessoa == "V" || categoriaPessoa == "X" || categoriaPessoa == "Y"
+            || categoriaPessoa == "W" || categoriaPessoa == "Z"){
+                acrescimo = salarioPessoa * (50/100); 
+                novoSalario = salarioPessoa + acrescimo; 
+            }
+
+            var txt = "<h2>Informações de aumento de salário</h2><br>" +
+            "Nome: " + nomePessoa + ".<br>" +
+            "Categoria: " + categoriaPessoa + ".<br>" + 
+            "Novo salário: " + novoSalario + ".";
+
+            document.write(txt);
+
+        }
+
+    </script>
+</body>
+</html>

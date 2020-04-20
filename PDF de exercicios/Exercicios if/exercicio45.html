@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 45</title>
+</head>
+<body>
+    <h2>Conta bancária</h2>
+    <input id="numeroConta" type="text" placeholder="Digite o número da sua conta">
+    <input id="saldo" type="text" placeholder="Digite o seu saldo">
+    <input id="operacao" type="text" placeholder="Digite a operação a ser realizada">
+    <input id="valorOperação" type="text" placeholder="Digite o valor da operação">
+
+    <p>Operação: digite 1 para deposito ou 2 para saque</p>
+    <button onclick="acaoBancaria()">Confirmar</button>
+
+    <div id="result"></div>
+
+    <script>
+        var numeroConta = document.getElementById('numeroConta'); 
+        var saldo = document.getElementById('saldo'); 
+        var operacao = document.getElementById('operacao'); 
+        var valorOperação = document.getElementById('valorOperação'); 
+
+        var result = document.getElementById('result');
+
+        function acaoBancaria(){
+            var numeroContaPessoa = numeroConta.value; 
+            var saldoPessoa = parseFloat(saldo.value); 
+            var operacaoPessoa = parseInt(operacao.value);
+            var valorOperacaoPessoa = parseFloat(valorOperação.value);
+
+            if(operacaoPessoa == 1){
+                saldoPessoa = saldoPessoa + valorOperacaoPessoa;
+            }else if(operacaoPessoa == 2){
+                saldoPessoa = saldoPessoa - valorOperacaoPessoa;
+            }
+            var txt; 
+            if(saldoPessoa < 0){
+                txt = document.createTextNode("O seu saldo é: " + saldoPessoa + " e sua conta estourou."); 
+            }else{
+                txt = document.createTextNode("O seu saldo é: " + saldoPessoa + "."); 
+            }
+
+            result.appendChild(txt);
+        }
+    </script>
+</body>
+</html>

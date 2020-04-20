@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 41</title>
+</head>
+<body>
+
+    <input id="quantidadeCarros" type="text" placeholder="Digite a quantidade de carros que você vendeu">
+    <input id="valorTotaldeVendas" type="text" placeholder="Digite o valor total de vendas">
+    <button id="button" onclick="salarioTotal()">Calcular</button>
+
+    <div id="result">
+
+    </div>
+    <script>
+        var quantidadeCarros = document.getElementById('quantidadeCarros');
+        var valorTotaldeVendas = document.getElementById('valorTotaldeVendas');
+        var result = document.getElementById('result');
+
+        
+
+        function salarioTotal(){
+            result.innerHTML = "";
+            var quantidadeCarros1 = parseInt(quantidadeCarros.value, 10); 
+            var valorTotaldeVendas1 = parseFloat(valorTotaldeVendas.value, 10)
+
+            var comissao = quantidadeCarros1 * 50; 
+            var comissao5 = valorTotaldeVendas1 * (5/100); 
+
+            var salario = 2090 + comissao + comissao5; 
+            var txt = document.createTextNode("O seu salário desse mês é: " + salario + " reais.")
+            result.appendChild(txt);
+
+        }
+
+    </script>
+</body>
+</html>

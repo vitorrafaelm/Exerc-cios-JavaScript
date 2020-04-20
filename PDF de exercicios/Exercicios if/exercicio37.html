@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 37</title>
+</head>
+<body>
+    
+    <input id="ano" type="text" placeholder="Digite a quantidade de anos que você já viveu">
+    <input id="mes" type="text" placeholder="Digite a quantidade de mês">
+    <input id="dia" type="text" placeholder="Digite a quantidade de dias">
+
+    <button id="button" onclick="showQuantidadeDeDias()">Converter em dias</button>
+
+    <div id="result">
+
+    </div>
+
+    <script>
+        var ano = document.getElementById('ano'); 
+        var mes = document.getElementById('mes');
+        var dia = document.getElementById('dia');
+
+        var button = document.getElementById('button');
+        var result = document.getElementById('result');
+
+        function showQuantidadeDeDias(){
+            ano = parseInt(ano.value); 
+            mes = parseInt(mes.value); 
+            dia = parseInt(dia.value);
+
+            var convertAnoEmDia = (12 * ano) * 30; 
+            var convertMesEmDia = mes * 30; 
+
+            var quantidadeDeDias = convertAnoEmDia + convertMesEmDia + dia; 
+
+            var txt = document.createTextNode("A quantidade de dias que você viveu é: " + quantidadeDeDias +"."); 
+            result.appendChild(txt);  
+        }
+        
+    </script>
+</body>
+</html>

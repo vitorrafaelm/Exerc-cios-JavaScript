@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 42</title>
+</head>
+<body>
+    
+    <script>
+
+        var artigo1 = "artigo1"; //Preço: 10 reais
+        var artigo2 = "artigo2"; //Preço: 20 reais
+        var artigo3 = "artigo3"; //Preço: 25 reais
+        var artigo4 = "artigo4"; //Preço: 22 reais
+
+        var descontoArtigo1 = 10 * (10/100);
+        var descontoArtigo2 = 20 * (10/100);
+        var descontoArtigo3 = 25 * (10/100);
+        var descontoArtigo4 = 22 * (10/100);
+
+        var precoComDescontoArtigo1 = 10 - descontoArtigo1; 
+        var precoComDescontoArtigo2 = 20 - descontoArtigo2; 
+        var precoComDescontoArtigo3 = 25 - descontoArtigo3; 
+        var precoComDescontoArtigo4 = 22 - descontoArtigo4; 
+
+        var precoTotal = precoComDescontoArtigo1 + precoComDescontoArtigo2 + precoComDescontoArtigo3 + precoComDescontoArtigo4; 
+
+        var txt = "<h2> Artigos </h2> <br> " +
+        artigo1 + ", R$ 10,00 - Preço com desconto: " + precoComDescontoArtigo1 + "<br>" +
+        artigo2 + ", R$ 20,00 - Preço com desconto: " + precoComDescontoArtigo2 + "<br>" +
+        artigo3 + ", R$ 25,00 - Preço com desconto: " + precoComDescontoArtigo3 + "<br>" +
+        artigo4 + ", R$ 22,00 - Preço com desconto: " + precoComDescontoArtigo4 + "<br>" + 
+        "O preço total a pagar é: " + precoTotal + "reais";
+
+        document.write(txt);
+    </script>
+
+</body>
+</html>

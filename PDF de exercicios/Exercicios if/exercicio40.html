@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 40</title>
+</head>
+<body>
+
+    <input id="nome" type="text" placeholder="Digite o seu nome">
+    <input id="quantidadeParafusos" type="text" placeholder="Digite a quantidade de parafusos">
+    <input id="quantidadePorcas" type="text" placeholder="Digite a quantidade de porcas">
+    <input id="quantidadeArruelas" type="text" placeholder="Digite a quantidade de arruelas">
+
+    <button id="button" onclick="showContent()">Calcular o preço</button>
+    <div id="result">
+
+    </div>
+
+    <script>
+        var nome = document.getElementById("nome");
+        var quantidadeParafusos = document.getElementById('quantidadeParafusos');
+        var quantidadePorcas = document.getElementById('quantidadePorcas');
+        var quantidadeArruelas = document.getElementById('quantidadeArruelas');
+
+        var button = document.getElementById('button');
+        var result = document.getElementById('result');
+
+        function showContent(){
+            //Valor do prafuso: 50 centavos. 
+            var valorParafusos = parseInt(quantidadeParafusos.value) * 0.5; 
+            //Valor da porca: 30 centavos.
+            var valorPorcas = parseInt(quantidadePorcas.value) * 0.3; 
+            //Valor da arruela: 20 centavos.
+            var valorArruela = parseInt(quantidadeArruelas.value) * 0.3; 
+
+            var valorCompra = valorArruela + valorParafusos + valorPorcas; 
+
+            //Desconto 
+            var descontoParafusos = valorParafusos * (20/100); 
+            valorParafusos = valorParafusos - descontoParafusos; 
+
+            var descontoArruelas = valorArruela * (30/100); 
+            valorArruela = valorArruela - descontoArruelas; 
+
+            var descontoPorcas = valorPorcas * (10/100); 
+            valorPorcas = valorPorcas - descontoPorcas; 
+
+            var valorDesconto = descontoArruelas + descontoParafusos + descontoPorcas; 
+            var compraComDesconto = valorArruela + valorParafusos + valorPorcas;
+
+            var txt = "Nome: " + nome.value + "<br> Quantidade de parafusos: " + quantidadeParafusos.value + "<br> Quantidade de porcas: " + 
+            quantidadePorcas.value + "<br> Quantidade de arruelas: " + quantidadeArruelas.value + ".";
+
+            var txt2 = "<br> Valor total da compra: " + valorCompra + " reais. <br> Valor de desconto: " + valorDesconto + 
+            "<br> O preço a pagar pela compra é: " + compraComDesconto + ".";
+
+            var texto = txt + txt2;
+
+            document.write(texto);
+        }
+    </script>
+
+</body>
+</html>
