@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 49</title>
+</head>
+<body>
+    <h2>Testar se é triângulo</h2>
+
+    <input type="text" id="lado1" placeholder="Digite o primeiro lado">
+    <input type="text" id="lado2" placeholder="Digite o segundo lado">
+    <input type="text" id="lado3" placeholder="Digite o terceiro lado">
+
+    <button onclick="test()">Test</button>
+
+    <div id="result">
+
+    </div>
+
+    <script>
+        var result = document.getElementById('result');
+
+        function test(){
+            var lado1 = document.getElementById('lado1'); 
+            var lado2 = document.getElementById('lado2'); 
+            var lado3 = document.getElementById('lado3'); 
+
+            lado1 = parseFloat(lado1.value); 
+            lado2 = parseFloat(lado2.value); 
+            lado3 = parseFloat(lado3.value); 
+            var txt = ""; 
+
+            if((lado1 < lado2 + lado3) && (lado2 < lado1 + lado3) && (lado3 < lado1 + lado2)){
+                if(lado1 == lado2 && lado2 == lado3 && lado1 == lado3){
+                    txt = 'É um triângulo equilátero'
+                }else if(lado1 == lado2 || lado1 == lado3 || lado2 == lado3){
+                    txt = 'É um triângulo isósceles'
+                }else if(lado1 != lado2 && lado2 != lado3 && lado1 != lado3){
+                    txt = 'É um triângulo escaleno'
+                }
+            }
+
+            var textNode = document.createTextNode(txt); 
+            result.appendChild(textNode);
+
+        }
+    </script>
+</body>
+</html>

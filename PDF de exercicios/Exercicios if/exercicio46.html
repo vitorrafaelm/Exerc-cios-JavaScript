@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 46</title>
+</head>
+<body>
+    <h2>Hotel</h2>
+
+    <input type="text" id="nome" placeholder="Digite o seu nome">
+    <input type="text" id="quantidadeDeDias" placeholder="Digite a quantidade de dia que vai ficar">
+    <button id="button" onclick="showInfo()">Calcular </button>
+    
+    <div id="result">
+       
+    </div>
+
+    <script>
+        var nome = document.getElementById('nome'); 
+        var quantidadeDeDias = document.getElementById('quantidadeDeDias');  
+        var result = document.getElementById('result'); 
+
+        function showInfo(){
+            result.innerHTML = "";
+            var nomeHospede = nome.value; 
+            var diasHospedagem = parseInt(quantidadeDeDias.value); 
+
+            var valor = 0; 
+            if(diasHospedagem < 15){
+                valor = (60 * diasHospedagem) + diasHospedagem * 8; 
+            }else if(diasHospedagem > 15){
+                valor = (60 * diasHospedagem) + diasHospedagem * 5.5; 
+            }else {
+                valor = (60 * diasHospedagem) + diasHospedagem * 6; 
+            }
+
+            var txt = document.createTextNode("O seu nome é: " +
+            nomeHospede + " e o valor que você tem que pagar é: " +
+            valor); 
+            result.appendChild(txt);
+        }
+    </script>
+
+</body>
+</html>

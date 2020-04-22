@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 50</title>
+</head>
+<body>
+    <h2>Mostrar conceito</h2>
+
+    <input type="text" id="nota" placeholder="Digite a sua nota">
+    <button onclick="showConcept()"> show concept </button>
+
+    <div id="result">
+
+    </div>
+
+    <script>
+        var result = document.getElementById('result'); 
+
+        function showConcept(){
+            var nota = document.getElementById('nota'); 
+            nota = parseFloat(nota.value); 
+
+            var conceito = "";
+
+            if(nota > 0 && nota <= 49){
+                conceito = 'Insuficiente';
+            }else if(nota >= 50 && nota <= 64){
+                conceito = 'Regular';
+            }else if(nota >= 65 && nota <= 84){
+                conceito = 'Bom';
+            }else if(nota >= 85 && nota <= 100){
+                conceito = 'Ótimo';
+            }
+
+            var txtNode = document.createTextNode('Sua nota é: ' + nota + ' e o seu conceito é: ' 
+            + conceito + '.');
+            result.appendChild(txtNode);
+        }
+    </script>
+
+</body>
+</html>
