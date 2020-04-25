@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 52</title>
+</head>
+<body>
+    <h2>Ler dois números e dizer se são iguais ou diferentes</h2>
+    <input type="text" id="num1" placeholder="Digite o primeiro número">
+    <input type="text" id="num2" placeholder="Digite o segundo número">
+    <button onclick="mostrarSeNumerosSaoDifrentes()">Executar</button>
+
+    <div id="result">
+
+    </div>
+
+    <script>
+        var result = document.getElementById('result'); 
+
+        function mostrarSeNumerosSaoDifrentes(){
+            result.innerHTML = "";
+            var num1 = parseFloat(document.getElementById('num1').value); 
+            var num2 = parseFloat(document.getElementById('num2').value); 
+
+            var text; 
+            if(num1 == num2){
+                text = 'Os números são iguais. '; 
+            }else {
+                text = 'Os números são diferentes. ';
+            }
+
+            var retorno = "";
+            if(num1 > num2){
+                retorno = 'O maior número é: ' + num1 + ' e o menor é ' +
+                num2 + '.';
+            }else if(num2 > num1){
+                retorno = 'O maior número é: ' + num2 + ' e o menor é ' +
+                num1 + '.';
+            }
+
+            var txtNode = document.createTextNode(text + retorno); 
+            result.appendChild(txtNode);
+
+        }
+    </script>
+</body>
+</html>

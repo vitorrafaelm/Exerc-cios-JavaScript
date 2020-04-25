@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 54</title>
+</head>
+<body>
+    <h2>Mostrar escolha</h2>
+    <input type="text" id="opcao" placeholder="Digite a sua opção">
+    <p>Opções possíveis: 2, 3 e 4</p>
+    <input type="text" id="num1" placeholder="Digite o primeiro número">
+    <input type="text" id="num2" placeholder="Digite o segundo número">
+    <input type="text" id="num3" placeholder="Digite o terceiro número">
+    <button onclick="mostrarOpcaoEscolhida()">Submeter</button>
+
+    <div id="result">
+
+    </div>
+
+    <script>
+        var result = document.getElementById('result'); 
+
+        function mostrarOpcaoEscolhida(){
+            result.innerHTML = "";
+            var opcao = parseFloat(document.getElementById('opcao').value);
+            var num1 = parseFloat(document.getElementById('num1').value); 
+            var num2 = parseFloat(document.getElementById('num2').value); 
+            var num3 = parseFloat(document.getElementById('num3').value); 
+
+            var txt; 
+            if(opcao == 2){
+                txt = 'Número ' + num1; 
+            }else if(opcao == 3){
+                txt = 'Número ' + num2; 
+            }else if(opcao == 4){
+                txt = 'Número ' + num3;
+            }
+            txt = document.createTextNode(txt)
+            result.appendChild(txt);
+
+
+        }
+    </script>
+</body>
+</html>

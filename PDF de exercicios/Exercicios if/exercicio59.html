@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 59</title>
+</head>
+<body>
+    <h2>Dizer se o número é impar ou par e positivo ou negativo</h2>
+    <input type="text" placeholder="Digite um número">
+    <button onclick="execuxao()">Enviar</button>
+
+    <div>
+
+    </div>
+
+    <script>
+        var execuxao = () => {
+            var input = document.querySelectorAll('input'); 
+            var div = document.querySelector('div');
+            div.innerHTML = "";
+            var num = parseFloat(input[0].value); 
+
+            var txt; 
+            if(num > 0){
+                txt = `O número ${num} é positivo. `; 
+            }else {
+                txt = `O número ${num} é negativo. `; 
+            }
+
+            if(num % 2 == 0){
+                txt += 'E é par.'
+            }else {
+                txt += 'E é ímpar.'
+            }
+
+            txt = document.createTextNode(txt); 
+            div.appendChild(txt);
+
+        }
+    </script>
+</body>
+</html>

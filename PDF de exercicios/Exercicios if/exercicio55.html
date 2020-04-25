@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 55</title>
+</head>
+<body>
+    <h2>Mostrar Média</h2>
+   
+    <input type="text" id="nota1" placeholder="Digite a primeira nota">
+    <input type="text" id="nota2" placeholder="Digite a segunda nota">
+    <input type="text" id="nota3" placeholder="Digite a terceira nota">
+    <button onclick="mostrarOpcaoEscolhida()">Submeter</button>
+
+    <div id="result">
+
+    </div>
+
+    <script>
+        var result = document.getElementById('result'); 
+
+        function mostrarOpcaoEscolhida(){
+            result.innerHTML = "";
+            
+            var nota1 = parseFloat(document.getElementById('nota1').value); 
+            var nota2 = parseFloat(document.getElementById('nota2').value); 
+            var nota3 = parseFloat(document.getElementById('nota3').value); 
+
+            var media = (nota1 + nota2 + nota3)/3;  
+            
+            var txt; 
+            if(media >= 7){
+                txt = 'A sua média é ' + media + ' e você está aprovado'; 
+            }else if(media < 7 && media >= 4){
+                txt = 'A sua média é ' + media + ' e você está na prova final';
+            }else{
+                txt = 'A sua média é ' + media + ' e você está reprovado';
+            }
+
+            txt = document.createTextNode(txt);
+            result.appendChild(txt);
+
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 56</title>
+</head>
+<body>
+    <h2>Escolher o maior valor entre três números</h2>
+    <input type="text" placeholder="Digite o primeiro número">
+    <input type="text" placeholder="Digite o segundo número">
+    <input type="text" placeholder="Digite o terceiro número">
+    <button onclick="result()">Executar</button>
+
+    <br>
+    <div>
+        <span></span> <br>
+        <span></span>
+    </div>
+
+    <script>
+        
+        var result = () => {
+            var inputs = document.querySelectorAll('input'); 
+            var span = document.querySelectorAll('span'); 
+
+            var input1 = parseFloat(inputs[0].value);
+            var input2 = parseFloat(inputs[1].value);
+            var input3 = parseFloat(inputs[2].value);
+
+            var txt1;
+
+            if(input1 > input2 && input1 > input3){
+                txt1 = `O maior número digitado é: ${input1}.`;
+            }else if(input2 > input1 && input2 > input3){
+                txt1 = `O maior número digitado é: ${input2}.`;
+            }else if(input3 > input1 && input3 > input2){
+                txt1 = `O maior número digitado é: ${input3}.`;
+            }
+
+            var txt2 = `Você digitou os números: ${input1}, ${input2}, ${input3}.`; 
+            txt2 = document.createTextNode(txt2);
+            span[0].appendChild(txt2);
+
+            txt1 = document.createTextNode(txt1);
+            span[1].appendChild(txt1);
+            
+        }
+    </script>
+</body>
+</html>

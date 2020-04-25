@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 57</title>
+</head>
+<body>
+    <h2>Saber se os dois valores são multiplos</h2>
+    <input type="text" placeholder="Digite o primeiro número">
+    <input type="text" placeholder="Digite o primeiro número">
+    <button onclick="multiplos()">Executar</button>
+
+    <div>
+
+    </div>
+
+    <script>
+        var multiplos = () => { 
+            var inputs = document.querySelectorAll('input'); 
+            var div = document.querySelector('div');
+
+            var valor1 = parseFloat(inputs[0].value); 
+            var valor2 = parseFloat(inputs[1].value); 
+
+            var txt; 
+            if (valor1 > valor2){
+                if(valor1 % valor2 == 0){
+                    txt = `O números ${valor1} e ${valor2}
+                    são múltiplos`;
+                }else {
+                    txt = 'Os números não são múltiplos.';
+                }
+            }else if(valor2 > valor1){
+                if(valor2 % valor1 == 0){
+                    txt = `O números ${valor1} e ${valor2}
+                    são múltiplos`;
+                }else {
+                    txt = 'Os números não são múltiplos.';
+                }
+            }
+            txt = document.createTextNode(txt);
+            div.appendChild(txt); 
+
+        }
+    </script>
+</body>
+</html>
