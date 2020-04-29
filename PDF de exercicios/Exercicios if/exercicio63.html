@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 63</title>
+</head>
+<body>
+    <h2>Calcular dívida</h2>
+
+    <form action="">
+        <input type="text" placeholder="Digite o código do produto">
+        <input type="text" placeholder="Digite a quantidade">
+        <button>Calcular</button>
+    </form>
+
+    <div></div>
+
+    <script>
+        var form = document.forms;
+        var input = document.querySelectorAll('input'); 
+        var div = document.querySelector('div');
+
+        form[0].addEventListener('submit', (e) => {
+            e.preventDefault(); 
+
+            let codigo = parseInt(input[0].value); 
+            let quantidade = parseInt(input[1].value);
+
+            let preco;
+            if(codigo == 1001){
+                preco = (quantidade * 5.32).toFixed(2); 
+            }else if(codigo == 1324){
+                preco = (quantidade * 6.45).toFixed(2); 
+            }else if(codigo == 6548){
+                preco = (quantidade * 2.37).toFixed(2);  
+            }else if(codigo == 0987){
+                preco = (quantidade * 5.32).toFixed(2); 
+            }else if(codigo == 7623){
+                preco = (quantidade * 6.45).toFixed(2); 
+            }
+
+            div.textContent = `O valor a pagar é: ${preco} reais.`
+
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 69</title>
+</head>
+<body>
+    <h2>Zodiaco</h2>
+
+    <form action="">
+        <input type="text" placeholder="Digite a sua data de nascimando">
+        <button>Saber</button>
+    </form>
+
+    <div></div>
+
+    <script>
+        var input = document.querySelector('input'); 
+        var div = document.querySelector('div'); 
+
+        input.parentElement.addEventListener('submit', (e) => {
+            e.preventDefault(); 
+
+            console.log(input.value);
+            var dia = parseInt(input.value[0] + input.value[1]); 
+            var mes = parseInt(input.value[3] + input.value[4]); 
+            var ano = input[6]+input[7]+input[8]+input[9]; 
+            var signo; 
+
+            console.log(dia, mes);
+
+            if((dia >= 21 && mes == 01) && (dia <= 19 && mes == 02)){
+                signo = 'Libra'; 
+            }else if((dia >= 20 && mes == 02) || (dia <= 20 && mes == 03)){
+                signo = 'Peixes';
+            }else if((dia >= 21 && mes == 03) || (dia <= 20 && mes == 04)){
+                signo = 'Áries';
+            }else if((dia >= 21 && mes == 04) || (dia <= 20 && mes == 05)){
+                signo = 'Touro';
+            }else if((dia >= 21 && mes == 05) || (dia <= 20 && mes == 06)){
+                signo = 'Gêmeos';
+            }else if((dia >= 21 && mes == 06) || (dia <= 21 && mes == 07)){
+                signo = 'Câncer';
+            }else if((dia >= 22 && mes == 07) || (dia <= 22 && mes == 08)){
+                signo = 'Leão';
+            }else if((dia >= 23 && mes == 08) || (dia <= 22 && mes == 09)){
+                signo = 'Virgem';
+            }else if((dia >= 23 && mes == 09) || (dia <= 22 && mes == 10)){
+                signo = 'Libra';
+            }else if((dia >= 23 && mes == 10) || (dia <= 21 && mes == 11)){
+                signo = 'Escorpião';
+            }else if((dia >= 22 && mes == 11) || (dia <= 21 && mes == 12)){
+                signo = 'Sagitário';
+            }else if((dia >= 22 && mes == 12) || (dia <= 20 && mes == 01)){
+                signo = 'Peixes';
+            }
+
+            div.textContent = `O seu signo é ${signo}.`;
+
+            
+        })
+    </script>
+
+</body>
+</html>

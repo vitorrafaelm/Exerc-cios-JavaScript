@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 71</title>
+</head>
+<body>
+    <h2>Peso, altura</h2>
+
+    <form action="">
+        <h3>Pessoa 1</h3>
+        <input type="text" placeholder="Digite o seu nome">
+        <input type="text" placeholder="Digite sua altura">
+        <input type="text" placeholder="Digite o seu peso">
+        <h3>Pessoa 2</h3>
+        <input type="text" placeholder="Digite o seu nome">
+        <input type="text" placeholder="Digite sua altura">
+        <input type="text" placeholder="Digite o seu peso">
+        <br><br>
+        <button>Enviar</button>
+    </form>
+
+    <form action="">
+        
+        
+    </form>
+
+    <div></div>
+
+    <script>
+        var forms = document.forms; 
+        var div = document.querySelector('div'); 
+        var input = document.querySelectorAll('input'); 
+
+
+        forms[0].addEventListener('submit', (e) => {
+            e.preventDefault(); 
+
+            var nomePessoa1 = input[0].value; 
+            var pesoPessoa1 = parseFloat(input[2].value); 
+            var alturaPessoa1 = parseFloat(input[1].value); 
+            console.log(nomePessoa1, pesoPessoa1, alturaPessoa1)
+
+            var nomePessoa2 = input[3].value; 
+            var pesoPessoa2 = parseFloat(input[5].value); 
+            var alturaPessoa2 = parseFloat(input[4].value);
+
+            console.log(nomePessoa2, pesoPessoa2, alturaPessoa2)
+
+            var maisPesada; 
+            var maisAlta; 
+
+            if(pesoPessoa1 > pesoPessoa2){
+                maisPesada = nomePessoa1; 
+            }else{
+                maisPesada = nomePessoa2; 
+            }
+
+            if(alturaPessoa1 > alturaPessoa2){
+                maisAlta = nomePessoa1; 
+            }else {
+                maisAlta = nomePessoa2; 
+            }
+
+            div.textContent = `A pessoa mais pesada é ${maisPesada} e
+            a pessoa mais alta é ${maisAlta}.`
+        });
+    </script>
+</body>
+</html>

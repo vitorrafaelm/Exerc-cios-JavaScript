@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 68</title>
+</head>
+<body>
+    <h2>Funcionário</h2>
+
+    <form action="">
+        <input type="text" placeholder="Digite o seu salário">
+        <button>Calcular aumento</button>
+    </form>
+
+    <div></div>
+
+
+    <script>
+        var input = document.querySelector('input'); 
+        var div = document.querySelector('div');
+
+        input.parentElement.addEventListener('submit', (e) => {
+            e.preventDefault(); 
+
+            var salario = parseFloat(input.value); 
+            var desconto = salario * (11/100); 
+            
+            var salarioComDesconto; 
+            if(desconto <= 318.2){
+                salarioComDesconto = salario - desconto; 
+            }else if(desconto > 318.2){
+                salarioComDesconto = salario - 318.2; 
+            }
+
+            txt = `O seu novo salário é: ${salarioComDesconto} 
+            e o desconto foi de ${desconto > 318.2 ? 318.2 : desconto} reais.`;
+
+            div.textContent = txt; 
+
+        })
+    </script>
+</body>
+</html>

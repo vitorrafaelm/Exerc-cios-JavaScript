@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 62</title>
+</head>
+<body>
+    <h2>Saldo médio e valor de crédito</h2>
+    <form action="">
+        <input type="text" placeholder="Digite o seu saldo médio">
+        <button>Calcular</button>
+    </form>
+
+    <div></div>
+
+    <script>
+        var form = document.forms;
+        var saldo = document.querySelector('input');
+        var div = document.querySelector('div');
+        var button = document.querySelector('button'); 
+
+        form[0].addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            let saldoMedio = parseFloat(saldo.value); 
+            let credito; 
+            var txt;
+
+            if(saldoMedio > 0 && saldoMedio <= 200){
+                txt = 'Nenhum credito.'; 
+            }else if(saldoMedio >= 201 && saldoMedio <= 400){
+                credito = (saldoMedio * (20/100));
+                txt = `O seu credito é: ${credito}.`;
+            }else if(saldoMedio >= 401 && saldoMedio <= 600){
+                credito = (saldoMedio * (30/100));
+                txt = `O seu credito é: ${credito}.`;
+            }else if(saldoMedio >= 601){
+                credito = (saldoMedio * (40/100));
+                txt = `O seu credito é: ${credito}.`;
+            }
+
+            txt += ` E o seu saldo médio é ${saldoMedio}`;
+
+            div.textContent = txt; 
+
+        }); 
+    </script>
+</body>
+</html>

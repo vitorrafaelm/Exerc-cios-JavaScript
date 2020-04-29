@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 65</title>
+</head>
+<body>
+    <h2>Média</h2>
+
+    <form action="">
+        <input type="text" placeholder="Digite a sua primeira nota">
+        <input type="text" placeholder="Digite a sua segunda nota">
+        <button>Média</button>
+    </form>
+
+    <div></div>
+
+    <script>
+        var forms = document.forms[0];
+        var inputs = document.querySelectorAll('input');
+        var div = document.querySelector('div');
+
+        forms.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let nota1 = parseFloat(inputs[0].value);
+            let nota2 = parseFloat(inputs[1].value);
+
+            let media = (nota1 + nota2) / 2; 
+
+            var txt; 
+            if(media >= 5){
+                txt = `A sua média foi: ${media} e você está 
+                aprovado.`; 
+            }else{
+                txt = `A sua média foi: ${media} e você está 
+                reprovado.`; 
+            }
+
+            div.textContent = txt;
+        })
+
+    </script>
+
+</body>
+</html>

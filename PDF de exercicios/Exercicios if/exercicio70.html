@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 70</title>
+</head>
+<body>
+    <h2>Retorna true para número par</h2>
+
+    <form action="">
+        <input type="text" placeholder="Digite um número">
+        <button>Enviar</button>
+    </form>
+
+    <div></div>
+    <script>
+        var input = document.querySelector('input'); 
+        var div = document.querySelector('div'); 
+
+        input.parentElement.addEventListener('submit', (e) => {
+            e.preventDefault(); 
+
+            var num = parseInt(input.value); 
+            var bool; 
+
+            if(num % 2 == 0){
+                bool = true;  
+            }else{
+                bool = false; 
+            }
+
+            div.textContent = bool; 
+            
+        })
+    </script>
+
+</body>
+</html>

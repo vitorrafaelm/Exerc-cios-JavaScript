@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 64</title>
+</head>
+<body>
+    <h2>Calcular preço</h2>
+
+    <form action="">
+        <input type="text" placeholder="Digite o código do produto">
+        <input type="text" placeholder="Digite a quantidade">
+        <button>Calcular</button>
+    </form>
+
+    <div></div>
+
+    <script>
+        var form = document.forms;
+        var input = document.querySelectorAll('input'); 
+        var div = document.querySelector('div');
+
+        form[0].addEventListener('submit', (e) => {
+            e.preventDefault(); 
+
+            let codigo = (input[0].value); 
+            let quantidade = parseInt(input[1].value);
+          
+            let preco = 0;
+            
+            if(codigo === 'ABCD'){
+                preco = (quantidade * 5.30); 
+            }else if(codigo === 'XYPK'){
+                preco = (quantidade * 6.00); 
+            }else if(codigo === 'KLMP'){
+                preco = (quantidade * 3.20);  
+            }else if(codigo === 'QRST'){
+                preco = (quantidade * 2.50); 
+            }else{
+                preco = NaN; 
+            }
+            
+            if(typeof preco == 'number'){
+                div.textContent = `O valor a pagar é: ${preco} reais.`;
+            }else {
+                div.textContent = `Por favor, digite um código válido`;
+            }
+
+            
+
+        })
+    </script>
+</body>
+</html>
