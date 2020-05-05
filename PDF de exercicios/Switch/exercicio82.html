@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 80</title>
+</head>
+<body>
+    <h2>Mostrar dados</h2>
+    <h3>Tabela de origem</h3>
+    <p>
+        1 – Sul | 5 ou 6 – Nordeste |
+        2 – Norte | 7 ou 8 ou 9 – Sudeste|
+        3 – Leste | 10 até 20 – Centro Oeste|
+        4 – Oeste |25 até 35 – Nordeste </p>
+    <form action="">
+        <input type="text" placeholder="Digite o preço do seu produto">
+        <input type="text" placeholder="Digite o código do seu produto">
+        <button>Enviar</button>
+    </form>
+
+    <div></div>
+
+    <script>
+        var form = document.forms[0]; 
+        var input = document.querySelectorAll('input'); 
+        var div = document.querySelector('div'); 
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault(); 
+
+            var precoPedido = parseFloat(input[0].value);
+            var Origem = parseInt(input[1].value);
+
+            switch(Origem){
+            case 1: 
+                txt = `${precoPedido} - Sul`; 
+                break; 
+            case 2: 
+                txt = `${precoPedido} - Norte`; 
+                break; 
+            case 3: 
+                txt = `${precoPedido} - Leste`; 
+                break; 
+            case 4: 
+                txt = `${precoPedido} - Oeste`; 
+                break;
+            case 5:
+            case 6: 
+                txt = `${precoPedido} - Nordeste`;
+                break; 
+            case 7:
+            case 8:
+            case 9: 
+                txt = `${precoPedido} - Sudeste`;
+                break; 
+            case 10:
+            case 11:
+            case 12: 
+            case 13:
+            case 14:
+            case 15:
+            case 16: 
+            case 17:
+            case 18:
+            case 19:
+            case 20:
+                txt = `${precoPedido} - Centro Oeste`;
+                break; 
+            case 25:
+            case 26:
+            case 27: 
+            case 28:
+            case 29:
+            case 30:
+            case 31: 
+            case 32:
+            case 33:
+            case 34:
+            case 35:
+                txt = `${precoPedido} - Nordeste`;
+                break;
+        }
+
+        div.textContent = txt;
+        })
+
+        
+    </script>
+</body>
+</html>

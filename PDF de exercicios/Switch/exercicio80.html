@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 80</title>
+</head>
+<body>
+    <h2>dia da semana</h2>
+    <form action="">
+        <input type="text" placeholder="Digite um número de 1 a 7">
+        <button>Enviar</button>
+    </form>
+
+    <div></div>
+
+    <script>
+        var form = document.forms[0]; 
+        var input = document.querySelector('input'); 
+        var div = document.querySelector('div'); 
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault(); 
+
+            var dia = parseInt(input.value);
+
+            switch(dia){
+            case 1: 
+                txt = 'Domingo'; 
+                break; 
+            case 2: 
+                txt = 'Segunda'; 
+                break; 
+            case 3: 
+                txt = 'Terça'; 
+                break; 
+            case 4: 
+                txt = 'Quarta'; 
+                break;
+            case 5:
+                txt = 'Quinta'; 
+                break;
+            case 6: 
+                txt = 'Sexta';
+                break; 
+            case 7:
+                txt = 'Sábado';
+                break;
+                
+        }
+
+        div.textContent = txt;
+        })
+
+        
+    </script>
+</body>
+</html>

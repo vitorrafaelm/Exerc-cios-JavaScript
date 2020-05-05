@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 78</title>
+</head>
+<body>
+    
+    <h2>Estrutura de decisão switch</h2>
+    <form action="">
+        <input type="text" placeholder="Digite um valor">
+        <input type="text" placeholder="Digite um segundo valor">
+        <input type="text" placeholder="Digite um terceiro valor">
+        <input type="text" placeholder="Digite um quarto valor">
+        <button type="submit">Enviar</button>
+    </form>
+
+    <div></div>
+
+    <script>
+
+        var form = document.forms[0]; 
+        var input = document.querySelectorAll('input');
+        var div = document.querySelector('div');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            
+                var l = parseInt(input[0].value); 
+                var A = parseInt(input[1].value); 
+                var B = parseInt(input[2].value); 
+                var C = parseInt(input[3].value); 
+               
+            
+            var txt;
+            switch(l){
+                case 1: 
+                    if(A > B && A > C && B > C){
+                            txt = `${ C } ${ B } ${ A }`;
+                        }else if( A  > B && A > C && B < C){
+                            txt = `${ B } ${ C } ${ A }`;
+                        }else if( B  > A && B > C && A > C){
+                            txt = `${ C } ${ A } ${ B }`;
+                        }else if( B  > A && B > C && A < C){
+                            txt = `${ A } ${ C } ${ B }`;
+                        }else if( C  > B && C > A && B > A){
+                            txt = `${ A } ${ B } ${ C }`;
+                        }else if( C  > B && C > A && B < A){
+                            txt = `${ B } ${ A } ${ C }`;
+                        }
+                        
+                    break; 
+                case 2: 
+                    if( A  > B && A > C && B > C){
+                            txt = `${ A } ${ B } ${ C }`;
+                        }else if( A  > B && A > C && B < C){
+                            txt = `${ A } ${ C } ${ B }`;
+                        }else if( B  > A && B > C && A > C){
+                            txt = `${ B } ${ A } ${ C }`;
+                        }else if( B  > A && B > C && A < C){
+                            txt = `${ B } ${ C } ${ A }`;
+                        }else if( C  > B && C > A && B > A){
+                            txt = `${ C } ${ B } ${ A }`;
+                        }else if( C  > B && C > A && B < A){
+                            txt = `${ C } ${ A } ${ B }`;
+                        }
+                        
+                    break; 
+                case 3: 
+                        if( A  > B && A > C){
+                                txt = `${ B } ${ A } ${ C }`;
+                            }else if( B  > A && B > C){
+                                txt = `${ A } ${ B } ${ C }`;
+                            }else if( C  > B && C > A){
+                                txt = `${ B } ${ C } ${ A }`;
+                            }
+                            
+                    break; 
+            }
+
+            div.textContent = txt;
+        }); 
+    </script>
+</body>
+</html>

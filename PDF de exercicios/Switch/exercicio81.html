@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 81</title>
+</head>
+<body>
+    <h2>Saber se é vogal ou consoante</h2>
+    <form action="">
+        <input type="text" placeholder="Digite uma letra">
+        <button>Enviar</button>
+    </form>
+
+    <div></div>
+
+    <script>
+        var form = document.forms[0]; 
+        var input = document.querySelector('input'); 
+        var div = document.querySelector('div'); 
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault(); 
+
+            var letra = input.value;
+            console.log(letra)
+            switch(letra){
+            case 'A': 
+            case 'E':
+            case 'I': 
+            case 'O':
+            case 'U':
+                txt = 'É vogal'; 
+                break; 
+            default: 
+                txt = "É consoante"; 
+                
+        }
+
+        div.textContent = txt;
+        })
+
+        
+    </script>
+</body>
+</html>

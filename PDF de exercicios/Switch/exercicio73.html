@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 73</title>
+</head>
+<body>
+    <div>
+
+        <form action="">
+            <input type="text" placeholder="Digite um número">
+            <h4>Digite a opção</h4>
+            <p>101 - Raiz quadrada.</p>
+            <p>102 - A metade.</p>
+            <p>103 - 10% do número.</p>
+            <p>104 - O dobro.</p>
+            <input type="text" placeholder="Digite a sua opção">
+            <button>Enviar</button>
+        </form>
+
+        <div id="div">
+            
+        </div>
+
+    </div>
+
+    <script>
+        var form = document.forms; 
+        var input = document.querySelectorAll('input');
+        var div = document.getElementById('div'); 
+
+        form[0].addEventListener('submit', (e) => {
+            e.preventDefault(); 
+            let numero = parseFloat(input[0].value); 
+            let opcao = parseInt(input[1].value); 
+            var resultado; 
+
+            switch(opcao){
+                case 101: 
+                    resultado = Math.sqrt(numero); 
+                    break; 
+                case 102: 
+                    resultado = numero/2; 
+                    break; 
+                case 103: 
+                    resultado = numero * ( 10/100 ); 
+                    break; 
+                case 104: 
+                    resultado = numero * 2; 
+                    break;
+                default: 
+                    resultado = 'Digite uma opção válida'
+            }
+
+            div.textContent = resultado; 
+        })
+    </script>
+</body>
+</html>

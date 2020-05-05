@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 79</title>
+</head>
+<body>
+    <h2>Saber estado cívil</h2>
+    <form action="">
+        <input type="text" placeholder="Digite a primeira letra do seu estado cívil">
+        <p>Digite D minúsculo para divorciado</p>
+        <button>Enviar</button>
+    </form>
+
+    <div></div>
+
+    <script>
+        var form = document.forms[0]; 
+        var input = document.querySelector('input');
+        var div = document.querySelector('div'); 
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault(); 
+            var txt; 
+            switch(input.value){
+                case 'S': 
+                    txt = 'Você é solteiro'; 
+                    break;
+                case 'C': 
+                    txt = 'Você é casado'; 
+                    break; 
+                case 'V': 
+                    txt = 'Você é viúvo'; 
+                    break; 
+                case 'd': 
+                    txt = 'Você é divorciado'; 
+                    break; 
+                case 'D': 
+                    txt = 'Você é desquitado'; 
+                    break; 
+                default: 
+                    txt = 'Digite uma letra válida';
+            }
+
+            div.textContent = txt;
+        })
+    </script>
+</body>
+</html>
