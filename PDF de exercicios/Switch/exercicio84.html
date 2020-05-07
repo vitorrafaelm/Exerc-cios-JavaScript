@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 84</title>
+</head>
+<body>
+    <h2>Conta Corrente</h2>
+    <form action="">
+        <input type="text" placeholder="Digite o seu nome">
+        <input type="text" placeholder="Digite o número da sua conta">
+        <input type="text" placeholder="Digite o seu saldo">
+        <button>Enviar</button>
+    </form>
+
+    <div></div>
+
+    <br><br>
+    <h2>Operações</h2>
+    <form action="">
+        <p>Operações possíveis: Deposito ou Retirada.
+        </p>
+        <input type="text" placeholder="Digite a operação">
+        <input type="text" placeholder="Digite o valor da operação">
+        <button>Enviar</button>
+    </form>
+
+    <div></div>
+
+    <script>
+        var forms = document.forms; 
+        var input = document.querySelectorAll('input'); 
+        var div = document.querySelectorAll('div'); 
+
+        forms[0].addEventListener('submit', (e) => {
+            e.preventDefault(); 
+
+            var nome = input[0].value; 
+            var NumConta = input[1].value; 
+            var saldo = parseFloat(input[2].value);
+
+            div[0].appendChild(document.createTextNode(`O seu nome é: 
+            ${nome}, o número da sua conta é: ${NumConta} e o seu saldo é ${saldo}.`)); 
+        }); 
+
+        forms[1].addEventListener('submit', (e) => {
+            e.preventDefault(); 
+
+            var saldo = parseFloat(input[2].value);
+            var operacao = input[3].value; 
+            var valorDaOperação = parseFloat(input[4].value); 
+
+            switch(operacao){
+                case 'Deposito':
+                    saldo = saldo + valorDaOperação; 
+                    break; 
+                case 'Retirada':
+                    saldo = saldo - valorDaOperação; 
+                    break;
+            }
+
+            div[1].appendChild(document.createTextNode(`O seu novo saldo é ${saldo}.`));
+        });
+    </script>
+</body>
+</html>

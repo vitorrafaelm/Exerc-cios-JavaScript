@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 83</title>
+</head>
+<body>
+    <h2>Escolha a operação</h2>
+    <form action="">
+        <p>Escolha: <br>
+        + | - | * | / | %</p>
+        <input type="text" placeholder="Digite a operação">
+        <input type="text" placeholder="Digite o primeiro número">
+        <input type="text" placeholder="Digite o segundo número">
+        <button>Enviar</button>
+    </form>
+
+    <div></div>
+
+    <script>
+        var form = document.forms[0]; 
+        var input = document.querySelectorAll('input'); 
+        var div = document.querySelector('div'); 
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault(); 
+
+            var operacao = input[0].value; 
+            var num1 = parseFloat(input[1].value);
+            var num2 = parseFloat(input[2].value); 
+
+            var resultado; 
+            switch(operacao){
+                case '+':
+                    resultado = num1 + num2;
+                    break; 
+                case '-':
+                    resultado = num1 - num2;
+                    break;
+                case '*':
+                    resultado = num1 * num2;
+                    break;
+                case '/':
+                    resultado = num1 / num2;
+                    break;
+                case '%':
+                    resultado = num1 % num2;
+                    break;
+            }
+
+            div.appendChild(document.createTextNode(`O
+            resultado da operação é ${resultado}.`)); 
+        })
+    </script>
+</body>
+</html>

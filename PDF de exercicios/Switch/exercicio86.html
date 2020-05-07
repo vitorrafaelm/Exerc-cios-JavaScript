@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 86</title>
+</head>
+<body>
+    <h2>Mostrar números por extenso</h2>
+    <form action="">
+        <input type="text" placeholder="Digite um número de 1 a 10">
+        <button>Enviar</button>
+    </form>
+
+    <div></div>
+
+    <script>
+        var form = document.forms[0]; 
+        var input = document.querySelector('input'); 
+        var div = document.querySelector('div'); 
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            var num = parseInt(input.value); 
+            var txt; 
+
+            switch(num){
+                case 1:
+                    txt = 'Um'; 
+                    break; 
+                case 2:
+                    txt = 'Dois'; 
+                    break; 
+                case 3:
+                    txt = 'Três'; 
+                    break; 
+                case 4:
+                    txt = 'Quatro'; 
+                    break; 
+                case 5:
+                    txt = 'Cinco'; 
+                    break; 
+                case 6:
+                    txt = 'Seis'; 
+                    break; 
+                case 7:
+                    txt = 'Sete'; 
+                    break; 
+                case 8:
+                    txt = 'Oito'; 
+                    break; 
+                case 9:
+                    txt = 'Nove'; 
+                    break; 
+                case 10:
+                    txt = 'Dez'; 
+                    break; 
+            }
+
+            div.textContent = txt; 
+        })
+    </script>
+</body>
+</html>
