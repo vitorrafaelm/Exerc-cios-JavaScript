@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 97</title>
+</head>
+<body>
+    
+    <form action="">
+        <input type="text" placeholder="Digite um número">
+        <button type="submit">Enviar</button>
+    </form>
+
+
+    <script>
+        var input = document.querySelector('input'); 
+        var button = document.querySelector('button'); 
+
+
+        input.parentElement.addEventListener('submit', (e) => {
+            var numero = parseInt(input.value);
+            e.preventDefault(); 
+            for(var i = 1; i <= 13; i++){
+                console.log(`${numero} * ${i} = ${numero * i}`);
+            }
+        });
+    </script>
+</body>
+</html>

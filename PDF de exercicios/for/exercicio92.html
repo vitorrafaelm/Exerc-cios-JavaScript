@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 92</title>
+</head>
+<body>
+    
+    <form action="">
+        <input type="text" placeholder="Digite um número">
+        <button type="submit" onsubmit="pegarValorForm()"> Enviar</button>
+    </form>
+    
+
+    <script>
+        var input = document.querySelector('input'); 
+
+        input.parentElement.addEventListener('submit', e => {
+            e.preventDefault(); 
+            let valorInput = parseInt(input.value); 
+            console.log(valorInput);
+            var a = 0;  
+            for(var i = 0; i <= valorInput; i++){
+                a = a + (valorInput - i + 1) / i; 
+            }
+            console.log(a);
+        });
+        
+    </script>
+
+</body>
+</html>

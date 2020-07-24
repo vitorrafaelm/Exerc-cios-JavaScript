@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for</title>
+</head>
+<body>
+    
+    <script>
+        var numeroLimite = 25; 
+
+        function somaPositivos(){
+            var somaPositivos = 0; 
+            var valoresNegativos = 0; 
+            for(var i = -25; i <= numeroLimite; i ++){
+                if(i > 0){
+                    somaPositivos += i;
+                }
+                if(i < 0){
+                    valoresNegativos += 1;
+                }
+            }
+
+            document.write(`A soma dos valores positivos é:
+            ${somaPositivos} e a quantidade de valores negativos é: 
+            ${valoresNegativos}.`);
+        }
+
+        somaPositivos();
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+    <script>
+        const alunos = {
+            Vitor: {
+                idade: 29,
+                altura: 1.7,
+                nota: 7
+            },
+            Matheus: {
+                idade: 19,
+                altura: 1.69,
+                nota: 6
+            },
+            Daniel: {
+                idade: 20,
+                altura: 1.72,
+                nota: 8.5
+            },
+            Rafael: {
+                idade: 24,
+                altura: 1.75,
+                nota: 8
+            },
+            Higor: {
+                idade: 28,
+                altura: 1.74,
+                nota: 8.2
+            },
+            Tales: {
+                idade: 27,
+                altura: 1.7,
+                nota: 8.4
+            },
+            Rodrigo: {
+                idade: 19,
+                altura: 1.74,
+                nota: 9
+            },
+            Osmar: {
+                idade: 19,
+                altura: 1.73,
+                nota: 9.3
+            },
+            Caio: {
+                idade: 27,
+                altura: 1.79,
+                nota: 10
+            }, 
+            Arthur: {
+                idade: 26,
+                altura: 1.65,
+                nota: 8.9
+            }
+        }
+
+        var nota = 0;
+        var altura = 0;  
+        var contaAlunos = 0;
+        var contaAlunos2 = 0;  
+        //Object.keys atribui chaves a um objeto
+        Object.keys(alunos).forEach(aluno => {
+            
+            if(alunos[aluno]['altura'] < 1.7){
+                nota += alunos[aluno]['nota']; 
+                contaAlunos++; 
+            }
+            if(alunos[aluno]['idade'] > 20){
+                altura += alunos[aluno]['altura'];
+                contaAlunos2++; 
+            }
+        }); 
+
+        let media = nota / contaAlunos; 
+        let mediaAltura = altura / contaAlunos2; 
+        
+        document.write(`
+            A média dos alunos que possuem altura maior que 
+            1.7 metros é: ${media} e a altura média dos alunos 
+            com mais de 20 anos é: ${mediaAltura}.
+        `);
+    </script>
+</body>
+</html>
